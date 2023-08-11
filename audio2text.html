@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Speech Recognition Example</title>
+    <title>a2t</title>
 </head>
 
 <body>
-    <h1>Speech Recognition Example</h1>
+    <h1>Speech Recognition</h1>
     <button id="startBtn">Start</button>
     <button id="stopBtn">Stop</button>
     <div id="outputDiv"></div>
@@ -59,6 +59,8 @@
         })
             .then(resp => {
                 console.log(resp);
+                const outputDiv = document.getElementById("outputDiv");
+                outputDiv.textContent = "Processed Text: " + resp.text;
             }
             )
             .catch(err => {

@@ -5,9 +5,12 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/upload', methods=['POST'])
+
+#the function just takes text and sends to the translate function
 def upload_audio():
     print(request.form)
     try:
+        #the text from the html page (input that gets converted to text)
         txt = request.form['text']
         # audio_data = base64.b64decode(audio_data)
         text=text_translate(txt).text
